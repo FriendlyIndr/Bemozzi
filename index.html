@@ -40,6 +40,7 @@
     color: var(--ink);
     font-family: 'Google Sans', 'Product Sans', sans-serif;
     font-weight: 400;
+    font-size: 17px;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
@@ -106,7 +107,7 @@
   main { padding-top: 64px; }
 
   /* ── HERO ── */
-  .hero { padding: 80px 48px 64px; }
+  .hero { padding: 96px 204px 80px; }
 
   .hero-eyebrow {
     font-family: 'Google Sans', sans-serif;
@@ -139,7 +140,7 @@
   /* Info: one invisible ghost line reserves height; real lines stack on top */
   .hero-info {
     font-family: 'Google Sans', sans-serif;
-    font-size: 14px; font-weight: 400;
+    font-size: 16px; font-weight: 400;
     color: var(--muted);
     max-width: 560px;
     line-height: 1.6;
@@ -156,7 +157,7 @@
 
   /* ── SECTION HEADER ── */
   .section-header {
-    padding: 48px 64px 28px;
+    padding: 48px 204px 28px;
     display: flex; align-items: baseline; justify-content: space-between;
   }
 
@@ -172,7 +173,15 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 24px;
-    padding: 0 64px 48px;
+    padding: 0 204px 48px;
+  }
+
+  /* First card spans 2 columns to highlight */
+  .product-card--wide {
+    grid-column: span 2;
+  }
+  .product-card--wide .product-img {
+    aspect-ratio: 16/9;
   }
 
   .product-card {
@@ -242,42 +251,32 @@
     to   { background-position: 200% 0; }
   }
 
-  .product-img-placeholder {
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center; gap: 8px;
-    background: var(--mid);
-  }
 
-  .placeholder-label {
-    font-family: 'Google Sans', sans-serif;
-    font-size: 12px; letter-spacing: 2px; color: var(--border); text-transform: uppercase;
-  }
 
   /* Bestseller badge on image */
   .product-badge {
     position: absolute; top: 12px; left: 12px; z-index: 2;
-    background: var(--ink); color: var(--paper);
+    background: #f5a623; color: #fff;
     font-family: 'Google Sans', sans-serif;
-    font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
-    padding: 4px 10px; border-radius: 999px; font-weight: 500;
+    font-size: 18px; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 999px; font-weight: 600;
   }
 
   .product-info { padding: 16px 18px 20px; }
 
   .product-category {
     font-family: 'Google Sans', sans-serif;
-    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
     color: var(--muted); margin-bottom: 5px;
   }
 
   .product-name {
     font-family: 'Google Sans', sans-serif;
-    font-size: 17px; font-weight: 500; line-height: 1.2; margin-bottom: 6px;
+    font-size: 19px; font-weight: 500; line-height: 1.2; margin-bottom: 6px;
   }
 
   .product-price {
-    font-size: 13px; font-weight: 400; color: var(--muted);
+    font-size: 15px; font-weight: 400; color: var(--muted);
   }
 
   .product-arrow {
@@ -294,7 +293,7 @@
   /* ── CUSTOM SECTION ── */
   .custom-section {
     border-top: 1px solid var(--border);
-    padding: 80px 64px;
+    padding: 80px 204px;
     display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
   }
 
@@ -320,7 +319,7 @@
   .btn-wa {
     display: inline-flex; align-items: center; gap: 10px;
     padding: 13px 22px; background: var(--wa); color: white;
-    text-decoration: none; font-size: 13px; font-weight: 500;
+    text-decoration: none; font-size: 18px; font-weight: 500;
     letter-spacing: 0.5px; border-radius: 999px; transition: opacity 0.2s;
     font-family: 'Google Sans', sans-serif;
   }
@@ -357,16 +356,16 @@
 
   /* ── FOOTER ── */
   footer {
-    border-top: 1px solid var(--border); padding: 20px 64px;
-    display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 20px;
+    border-top: 1px solid var(--border); padding: 24px 204px;
+    display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px;
   }
 
-  .footer-links { display: flex; gap: 24px; align-items: center; }
+  .footer-links { display: flex; gap: 28px; align-items: center; }
 
   .footer-links a {
-    font-size: 11px; color: var(--muted); text-decoration: none;
+    font-size: 13px; color: var(--muted); text-decoration: none;
     letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s;
-    display: flex; align-items: center; gap: 7px;
+    display: flex; align-items: center; gap: 8px;
   }
 
   .footer-links a:hover { color: var(--ink); }
@@ -426,10 +425,10 @@
   /* Bestseller badge on detail image */
   .detail-badge {
     position: absolute; top: 16px; left: 16px; z-index: 10;
-    background: var(--ink); color: var(--paper);
+    background: #f5a623; color: #fff;
     font-family: 'Google Sans', sans-serif;
-    font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
-    padding: 5px 12px; border-radius: 999px; font-weight: 500;
+    font-size: 31.5px; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 10px 22px; border-radius: 999px; font-weight: 600;
     display: none;
   }
   .detail-badge.visible { display: block; }
@@ -598,7 +597,123 @@
 
   .buy-note { font-size: 11px; color: var(--muted); text-align: center; line-height: 1.6; }
 
-  /* ── ANIMATIONS ── */
+  /* ── GALLERY PLACEHOLDER IMAGES ── */
+  .product-img-placeholder {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 8px;
+    background: var(--mid); position: relative; overflow: hidden;
+  }
+
+  .product-img-placeholder::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--mid) 0%, var(--border) 100%);
+  }
+
+  /* Unique gradient per card index */
+  .product-card:nth-child(1) .product-img-placeholder::before {
+    background: linear-gradient(135deg, #e8e0d8 0%, #d4c9bb 100%);
+  }
+  .product-card:nth-child(2) .product-img-placeholder::before {
+    background: linear-gradient(135deg, #d8e0e8 0%, #bbc9d4 100%);
+  }
+
+  /* Simulated fabric texture lines */
+  .product-img-placeholder::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 8px,
+      rgba(255,255,255,0.12) 8px,
+      rgba(255,255,255,0.12) 9px
+    );
+  }
+
+  .placeholder-label {
+    font-family: 'Google Sans', sans-serif;
+    font-size: 13px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase;
+    position: relative; z-index: 1;
+  }
+
+  /* ── FAQ LIGHTBOX ── */
+  .faq-overlay {
+    display: none; position: fixed; inset: 0; z-index: 300;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+    align-items: center; justify-content: center;
+    padding: 24px;
+  }
+  .faq-overlay.open { display: flex; animation: faqFadeIn 0.25s ease; }
+
+  @keyframes faqFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .faq-modal {
+    background: var(--paper); border-radius: 20px;
+    max-width: 600px; width: 100%; max-height: 80vh; overflow-y: auto;
+    padding: 48px; position: relative;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.18);
+    animation: faqSlideUp 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    scrollbar-width: thin; scrollbar-color: var(--border) transparent;
+  }
+
+  @keyframes faqSlideUp {
+    from { transform: translateY(24px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+
+  .faq-close {
+    position: absolute; top: 20px; right: 20px;
+    background: var(--mid); border: none; width: 36px; height: 36px;
+    border-radius: 50%; cursor: pointer; font-size: 14px; color: var(--muted);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, color 0.2s;
+  }
+  .faq-close:hover { background: var(--border); color: var(--ink); }
+
+  .faq-eyebrow {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 12px;
+  }
+
+  .faq-title {
+    font-family: 'Google Sans', sans-serif;
+    font-size: clamp(26px, 3vw, 38px); font-weight: 300; line-height: 1.1;
+    margin-bottom: 36px;
+  }
+  .faq-title em { font-style: italic; }
+
+  .faq-item {
+    border-top: 1px solid var(--border);
+    padding: 0;
+  }
+  .faq-item:last-child { border-bottom: 1px solid var(--border); }
+
+  .faq-item summary {
+    padding: 18px 0; cursor: pointer;
+    font-family: 'Google Sans', sans-serif;
+    font-size: 15px; font-weight: 500; list-style: none;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: color 0.2s;
+  }
+  .faq-item summary:hover { color: var(--muted); }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+'; font-size: 20px; font-weight: 300; color: var(--muted); flex-shrink: 0;
+  }
+  .faq-item[open] summary::after { content: '−'; }
+
+  .faq-item p {
+    font-size: 14px; line-height: 1.8; color: var(--muted);
+    padding-bottom: 18px;
+  }
+
+
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -632,6 +747,8 @@
 
   @media (max-width: 600px) {
     .product-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .product-card--wide { grid-column: span 2; }
+    .product-card--wide .product-img { aspect-ratio: 4/3; }
     .nav-links { display: none; }
   }
 </style>
@@ -665,7 +782,6 @@
 <main>
 
   <section class="hero">
-    <p class="hero-eyebrow">New Season Collection</p>
     <div class="hero-title-wrap" id="heroTitleWrap">
       <!-- Hero titles injected by JS -->
     </div>
@@ -722,11 +838,48 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         Instagram
       </a>
-      <a href="#faq">FAQ</a>
+      <a href="#" onclick="openFaq();return false;">FAQ</a>
     </div>
   </footer>
 
 </main>
+
+<!-- FAQ LIGHTBOX -->
+<div class="faq-overlay" id="faqOverlay" onclick="closeFaq(event)">
+  <div class="faq-modal">
+    <button class="faq-close" onclick="closeFaq()">✕</button>
+    <div class="faq-header">
+      <p class="faq-eyebrow">Support</p>
+      <h2 class="faq-title">Frequently Asked<br><em>Questions</em></h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How do I place an order?</summary>
+        <p>Simply browse our catalogue, pick your style and size, then tap "Order via WhatsApp". We'll confirm your order and share payment details over chat — no app needed.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What sizes do you offer?</summary>
+        <p>We carry XS through XXL across all styles. Each product page lists exact measurements. If you're between sizes, we recommend sizing up for a relaxed fit or down for a trim look.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How long does delivery take?</summary>
+        <p>Orders placed before 2 PM are dispatched the same day within Pune. Pan-India delivery typically takes 3–5 working days. You'll receive a tracking link once your order ships.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I get a custom t-shirt?</summary>
+        <p>Absolutely. We do DTF printing, screen printing, and embroidery. Reach us on WhatsApp with your design and we'll give you a quote within a few hours.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is your return policy?</summary>
+        <p>We accept returns within 7 days of delivery for unworn, unwashed items with original tags. Custom orders are non-returnable. Contact us on WhatsApp to initiate a return.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What payment methods do you accept?</summary>
+        <p>We accept UPI, bank transfer, and cash on delivery for select pincodes. Payment details are shared after you confirm your order over WhatsApp.</p>
+      </details>
+    </div>
+  </div>
+</div>
 
 <!-- PRODUCT PAGE -->
 <div class="product-page" id="productPage">
@@ -812,12 +965,14 @@ const heroInfos = [
 
 let heroIdx = 0;
 let infoIdx = 0;
+let heroPaused = false;
+let heroTimer = null;
 
 function initHero() {
   const wrap = document.getElementById('heroTitleWrap');
   const infoWrap = document.getElementById('heroInfo');
 
-  // Insert a ghost (longest title) first so the wrap has natural height
+  // Ghost holds the space
   const ghostTitle = document.createElement('h1');
   ghostTitle.className = 'hero-title ghost';
   ghostTitle.innerHTML = heroTitles.reduce((a, b) => a.length >= b.length ? a : b);
@@ -830,7 +985,7 @@ function initHero() {
     wrap.appendChild(el);
   });
 
-  // Ghost for info text (longest line holds the height)
+  // Ghost for info text
   const ghostInfo = document.createElement('span');
   ghostInfo.className = 'hero-info-text ghost';
   ghostInfo.textContent = heroInfos.reduce((a, b) => a.length >= b.length ? a : b);
@@ -842,29 +997,49 @@ function initHero() {
     el.textContent = t;
     infoWrap.appendChild(el);
   });
+
+  // Pause on hover over hero title or info
+  wrap.addEventListener('mouseenter', () => { heroPaused = true; });
+  wrap.addEventListener('mouseleave', () => { heroPaused = false; });
+  infoWrap.addEventListener('mouseenter', () => { heroPaused = true; });
+  infoWrap.addEventListener('mouseleave', () => { heroPaused = false; });
+
+  scheduleNext();
+}
+
+function scheduleNext() {
+  heroTimer = setTimeout(() => {
+    if (!heroPaused) {
+      rotateTitles();
+    }
+    scheduleNext();
+  }, 8000);
 }
 
 function rotateTitles() {
-  const titles = document.querySelectorAll('.hero-title');
-  const infos = document.querySelectorAll('.hero-info-text');
+  const titles = document.querySelectorAll('.hero-title:not(.ghost)');
+  const infos = document.querySelectorAll('.hero-info-text:not(.ghost)');
 
+  // Fade OUT current
   titles[heroIdx].classList.remove('active');
-  heroIdx = (heroIdx + 1) % titles.length;
-  titles[heroIdx].classList.add('active');
-
   infos[infoIdx].classList.remove('active');
-  infoIdx = (infoIdx + 1) % infos.length;
-  infos[infoIdx].classList.add('active');
+
+  // Wait for fade-out to finish, THEN fade in next
+  setTimeout(() => {
+    heroIdx = (heroIdx + 1) % titles.length;
+    infoIdx = (infoIdx + 1) % infos.length;
+    titles[heroIdx].classList.add('active');
+    infos[infoIdx].classList.add('active');
+  }, 700); // matches the transition duration
 }
 
 initHero();
-setInterval(rotateTitles, 3500);
 
 // ── PRODUCTS ──
 const products = [
   {
     id: 1, name: 'Classic White Tee', category: 'Essentials',
-    price: '₹699', tag: 'Bestseller', images: [],
+    price: '₹699', tag: 'Bestseller', images: ['https://picsum.photos/seed/tee1/600/800', 'https://picsum.photos/seed/tee1b/600/800'],
     specs: [
       { key: 'Fabric', val: '100% Combed Cotton' },
       { key: 'Weight', val: '180 GSM' },
@@ -877,7 +1052,7 @@ const products = [
   },
   {
     id: 2, name: 'Oversized Drop', category: 'Street',
-    price: '₹849', tag: '', images: [],
+    price: '₹849', tag: '', images: ['https://picsum.photos/seed/tee2/600/800', 'https://picsum.photos/seed/tee2b/600/800'],
     specs: [
       { key: 'Fabric', val: '100% Cotton' },
       { key: 'Weight', val: '220 GSM' },
@@ -949,17 +1124,17 @@ let quantity = 1;
 
 function renderGrid() {
   document.getElementById('product-count').textContent = products.length + ' items';
-  document.getElementById('product-grid').innerHTML = products.map(p => `
-    <div class="product-card" onclick="openProduct(${p.id})">
+  // wide card = spans 2 columns (first product highlighted)
+  document.getElementById('product-grid').innerHTML = products.map((p, idx) => `
+    <div class="product-card${idx === 0 ? ' product-card--wide' : ''}" onclick="openProduct(${p.id})">
       <div class="product-img">
         ${p.tag === 'Bestseller' ? `<div class="product-badge">Bestseller</div>` : ''}
         ${p.images.length > 0
           ? `<img class="img-primary" src="${p.images[0]}" alt="${p.name}" loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;">
              <img class="img-secondary" src="${p.images[1] || p.images[0]}" alt="${p.name} alt" loading="lazy">`
-          : `<div class="product-img-placeholder"><span class="placeholder-label">${p.category}</span></div>`}
+          : `<div class="product-img-placeholder"><span class="placeholder-label">${p.name}</span></div>`}
       </div>
       <div class="product-info">
-        <div class="product-category">${p.category}</div>
         <div class="product-name">${p.name}</div>
         <div class="product-price">${p.price}</div>
       </div>
@@ -1084,8 +1259,23 @@ _Order initiated on ${date}_`;
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
+function openFaq() {
+  document.getElementById('faqOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeFaq(e) {
+  if (!e || e.target === document.getElementById('faqOverlay')) {
+    document.getElementById('faqOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closePage();
+  if (e.key === 'Escape') {
+    closePage();
+    closeFaq();
+  }
   if (e.key === 'ArrowLeft') slideCarousel(-1);
   if (e.key === 'ArrowRight') slideCarousel(1);
 });
