@@ -6,6 +6,7 @@
 <title>BEMOZZI — Store</title>
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Google+Sans+Display:wght@300;400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/favicon.png">
 <style>
   /* ── LIGHT MODE ── */
   :root {
@@ -16,6 +17,8 @@
     --muted: #8a8880;
     --nav-bg: rgba(250,249,247,0.92);
     --wa: #25D366;
+    --closebg: #ff4f4d;
+    --close: #000000;
     --radius: 14px;
     --card-radius: 16px;
   }
@@ -28,7 +31,9 @@
       --mid: #1e1c1a;
       --border: #2e2c29;
       --muted: #6b6966;
+      --close: #000000;
       --nav-bg: rgba(20,20,18,0.92);
+      --closebg: #ff4f4d;
     }
   }
 
@@ -685,6 +690,7 @@
     box-shadow: 0 24px 80px rgba(0,0,0,0.18);
     animation: faqSlideUp 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     scrollbar-width: thin; scrollbar-color: var(--border) transparent;
+    border: 2px solid #ffffff;
   }
 
   @keyframes faqSlideUp {
@@ -694,8 +700,8 @@
 
   .faq-close {
     position: absolute; top: 20px; right: 20px;
-    background: var(--mid); border: none; width: 36px; height: 36px;
-    border-radius: 50%; cursor: pointer; font-size: 14px; color: var(--muted);
+    background: var(--closebg); border: none; width: 36px; height: 36px;
+    border-radius: 50%; cursor: pointer; font-size: 14px; color: var(--close);
     display: flex; align-items: center; justify-content: center;
     transition: background 0.2s, color 0.2s;
   }
@@ -946,12 +952,13 @@
     box-shadow: 0 24px 80px rgba(0,0,0,0.18);
     animation: faqSlideUp 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     scrollbar-width: thin; scrollbar-color: var(--border) transparent;
+    border: 2px solid #ffffff;
   }
 
   .about-close {
     position: absolute; top: 20px; right: 20px;
-    background: var(--mid); border: none; width: 36px; height: 36px;
-    border-radius: 50%; cursor: pointer; font-size: 14px; color: var(--muted);
+    background: var(--closebg); border: none; width: 36px; height: 36px;
+    border-radius: 50%; cursor: pointer; font-size: 14px; color: var(--close);
     display: flex; align-items: center; justify-content: center;
     transition: background 0.2s, color 0.2s;
   }
